@@ -1,0 +1,47 @@
+﻿<nav>
+    <router-outlet></router-outlet>
+</nav>
+
+<div>
+  <label>Car Model</label><input #carModel/>
+  <label>Car Description</label><input #carDescription/>
+  <label>Car Image</label><input #carImage/>
+  <label>Car Engine</label><input #carEngine />
+  <label>Car Transmission</label><input #carTransmission />
+  <label>Car State</label><input #carState />
+  <label>Car Power</label><input #carPower />
+  <label>Car Color</label><input #carColor />
+  <button (click)="addCar(carModel.value, carDescription.value, carImage.value, carEngine.value, carTransmission.value, 
+          carState.value, carPower.value, carColor.value);">
+      Add Car
+  </button>    
+    
+</div>
+
+Filters:
+<br>
+<label>Car Engine</label><input #carEng />
+<label>Car Transmission</label><input #carTrans/>
+<label>Car State</label><input #carSt />
+<label>Car Power</label><input #carPo />
+<label>Car Color</label><input #carCo />
+<button (click)="getFilteredCars(carEng.value, carTrans.value,
+          carSt.value, carPo.value, carCo.value);">
+    Filter Cars
+</button>  
+
+
+
+    <h2>All Cars</h2>
+    <ul>
+        <li *ngFor="#car of cars">
+            <div> {{car.model}} </div>
+
+        </li>
+    </ul>
+
+    <div>
+        <button (click)="showMoreCars();">
+            Show More...
+        </button>
+    </div>
